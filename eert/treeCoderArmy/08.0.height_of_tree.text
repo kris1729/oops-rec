@@ -1,0 +1,20 @@
+### Height of the BT   ###
+
+last node(leaf) witch is persent at the maxi height of level
+means last max level 
+
+
+ek dode ko dekhege agr exit krta hai to 1 add kr dege aur and
+me left aur right me se maxi bale ko le lege 
+
+
+
+///  sudo code
+
+int heigh(root){
+
+    if(!root) return NULL;
+
+    return (1 + max(heigh(root->left , root->right)));
+
+}

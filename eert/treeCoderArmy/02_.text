@@ -1,0 +1,52 @@
+Creation of tree PostOrder Mathod
+Left, Right , Root
+
+
+steps-->
+
+1.  if x==-1 return Null
+2. else create node
+3. left side jao
+4. right side jao
+5 . node's address ko return krna
+
+
+// code 
+
+
+class Node{
+    public:
+    int data ;
+    Node *left,*right;
+
+    Node(int value){
+        data = value;
+        *left = *right = NULL;
+    }
+}
+
+CreateBT(){
+
+    int x;
+    cin>>x;
+    if(x==-1)return NULL;
+
+    Node * temp = new Node(x);
+    temp->left = CreateBT();
+    temp->right = CreateBT();
+
+    return temp;
+
+}
+
+time complexity to build tree using recurtion
+O(n) har ek node ko create krne me O(1) unit of time 
+
+space complexity :
+O(height)  ---> height of tree
+
+kaise -- stack me ek node jitne jade height ka hoga utne uper tak stack banega ...so 
+ab use space is maxi height of the stack use to excute all  node's  calling 
+
+in worst case me space complexity is O(N) jab tree ek side me grow ho rha hai
+

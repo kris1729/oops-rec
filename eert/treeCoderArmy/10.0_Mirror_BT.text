@@ -1,0 +1,23 @@
+# tree ko mirror me badal do means 
+
+
+
+left right me chala jayega aur right lelfl;
+
+
+
+
+
+
+
+void changeInMirror(root){
+ if(!root) return ;
+ 
+ Node *temp = root->right;
+ root->right = root->left;
+ root->left = temp;
+
+ changeInMirror(root->left);
+ changeInMirror(root->right);
+
+}

@@ -1,0 +1,25 @@
+###  (GFG) size of binary tree ## 
+
+
+no of element in binay tree
+
+
+
+M.1 -->   koi treverse kr le jab kisi node se mile to cnt ko bda le  T.C O(N)
+
+void size(root,int &cnt){
+    if(root==NULL)return;
+    cnt++;
+    size(root->left,cnt);
+    size(root->right , cnt);
+
+}
+
+or.
+
+void size1(root){
+    if(root == NULL)return 0;
+    return  1 + size1(root->left)+size1(root->right);
+}
+
+

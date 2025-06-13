@@ -1,0 +1,64 @@
+// level order traversal wo bhi spiral from me 
+
+
+## imp ##
+
+pahle mai queue leta hu aur jab right to left jauga to 
+element ko bhi right to left add krug ...
+
+fir sabhi ek level ke element ki reverse kruga using stack
+
+fir left to right jauga aur element ko bhi left to right add kruga
+
+// take more time
+
+
+## use to stack ##
+
+jab left to right jao to element ko LtoR stack me add kre
+aur jab aap left to right jaye to RtoL stack me add kre
+
+
+left to rigth jane ka matalb stack LtoR to traeverse krna 
+right to left jane ka matalb ki stack  RtoL ki traverse krna
+
+ye kaam jab tak kee tab tak ki dono stack khali na ho jaye
+
+// sudo code 
+
+
+vector<int> levelspiral(Node *root){
+   stack<Node*>S1;
+   stack<Node*>s2;
+  vector<int>ans;
+   if(!root)return ans;
+   s2.push(root);
+
+   while(!s1.empty()||!s2.empty()){
+    // right to left
+     if(!s1.empty()){
+        while(!s1.empty()){
+            Node *temp = s1.top();
+            s1.pop();
+            ans.push_back(temp->data);
+            if(temp->right)s2.push(temp->right);
+            if(temp->left)s2.push(temp->left);
+
+        }
+     }
+   // left to right
+   if(!s2.empty()){
+     while(s2.empty()){
+        Node * temp = s2.top();
+        s2.pop();
+        ans.push_back(temp->data);
+        if(temp->left)s1.push(temp->left);
+        if(temp->right)s1.push(temp->right);
+     }
+
+   }   
+   }
+return ans;
+
+}
+

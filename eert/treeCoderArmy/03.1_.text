@@ -1,0 +1,14 @@
+sortcut me sabhi ko traversal nikalana ho to 
+
+1... preorder 
+
+grapgh ko root se ghera banye aur kis node se pahli baar milte hi use print kra de
+
+
+2... inorder 
+
+kisi node se jab dushri baar mile to print kra de 
+
+3.... post order 
+
+jab kisi bhi node se last milan ho to tab use print kra de ...

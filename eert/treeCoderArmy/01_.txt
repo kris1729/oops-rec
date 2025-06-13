@@ -1,0 +1,67 @@
+A Data Structre which store the value in hiricrical relationship b/w elements
+why --> searching time Dec , 
+
+    Node , Root ,Edges , Parent , Child , Leaf (has no Child ) , Ansestor(Pruvaj) , Descendent(ushke niche connected bale), level
+    Sibling (jinka parent same ho) , height(top and bottom ke bich ki distance (in b/w no of edge)) , Degree(total np of child)
+
+Binary Tree --> all node Atmost 2 child  (0/1/2 child)
+           A binary tree n node then total Edge ----> (n-1)Edge
+
+
+
+Creation of BT -->   l*ptr + data + r*ptr  
+
+(level )
+
+1
+2,3
+4,5,-1,6
+-1,-1,10,3
+
+
+// code step 
+1. root create 
+2. left child ko  banaye
+3. right child ko banaye
+4. Reapeat all 
+
+
+// code
+
+class Node{
+    public:
+    int data;
+    Node *left,*right;
+
+  Node(int value){
+    data = value;
+    left = right = Null;
+  }
+}
+
+int main(){
+      cin>>x;
+    queue<Node*>q;
+    Node *root = new Node(x);
+    q.push(root);
+
+    while(!q.empty()){
+        Node*temp = q.front;
+        q.pop();
+        cin>>x1;
+        if(x1 !=-1)temp->left = new Node(x1);
+        cin>>x2;
+        if(x2!=-1)temp->right = new Node(x2);
+
+        q.push(temp->left);
+        q.push(temp->right);
+    }
+}
+
+
+
+
+                        
+
+
+             

@@ -1,0 +1,45 @@
+# let view of binary tree
+
+left se dekhege to koun koun dikhega wahi ans hoga 
+// most left most of any level 
+
+//Approch .. level order ka pahla element ko print 
+kar lete hai
+
+
+
+// sudo code 
+
+vector<int>  printLeftView(Node* root){
+    vector<int>ans;
+    if(!root)return ans;
+    queue<Node*>q;
+    q.push(root);
+
+    while(!q.empty()){
+        int n = q.size();
+        for(int i =0;i<n;i++){
+            Node *temp = q.front();
+            q.pop();
+            if(i==0)ans.push_back(temp->data);
+            if(temp->left)q.push(temp->left);
+            if(temp->right)q.push(temp->right);
+        }
+    }
+    return ans;
+}
+
+
+// not use queue ans solve
+solve only use of recursion ...
+
+APP.. jab aap kisi level pe pali baar jau left call 
+ke dvara to use print ar dekhege
+// level kitne hai unka ek array and aur jab level pe jaye to
+use chek kr de
+
+// 
+
+
+#time and space == O(n)
+

@@ -1,0 +1,22 @@
+#### (GFG)  Sum of Binay Tree  ###
+
+sbhi node ka sum nikalna hai
+
+
+M.1 -->   koi treverse kr le jab kisi node se mile to cnt ko bda le  T.C O(N)
+
+void size(root,int &cnt){
+    if(!root)return;
+    cnt+=root->data;
+    size(root->left,cnt);
+    size(root->right , cnt);
+
+}
+
+or.
+
+int size1(root){
+    if(!root)return 0;
+    return  root->data + size1(root->left)+size1(root->right);
+}
+

@@ -1,0 +1,75 @@
+######   TRAVERSING   ######
+1. preorder --(node,left,right)
+2. inOrder ---(left,node,right)
+3. PostOrder -- (left,right,root)
+
+
+1....   Preorder traversal 
+    sab node ke liye follow (node , left, right)
+
+
+///  sudo Code
+
+ void preOrder(root){
+if(root==NULL) return
+print(root)
+priorder(root->left)
+priorder(root->right)
+ }
+
+
+2.... inOrder traversal
+    sab node ke liye pahle left ko print fir node ko fir right
+
+
+//// sudo code
+
+void inOrder(root)
+{
+   if(root==NULL)return;
+   inorder(root->left) 
+   print(root)
+   inorder(root->right)
+
+
+}
+
+
+4.... level order traversal
+   level wise sabhi ko print krana 
+
+//// sudo code
+
+void leveltrav(root){
+    if(root==NULL)return 
+    make quiue and push root
+    while(!q.empty()){
+        node = q.front
+        print (node)
+        if(node->left)q.push(node->left)
+        if(node->right)q.push(node->right)
+    }
+}
+
+
+
+3... PostOrder
+
+sab node ke liye pahle left ko print fir right ko print fir node ko print 
+
+
+// sudo code
+void PostOrder(root){
+if(root==NULL)return
+PostOrder(root->left)
+PostOrder(root->Right)
+print(node)
+}
+
+// time complexity ...O(n) node visit kr rha hai
+// space complexity  ..o(height)  in worst case O(N) max height ka stack banega nabhi node ke child ko call krne me
+
+
+// level wise
+ // time complexty === O(n)
+ // space complexity == o(n/2+1) == O(n) size of quiue
